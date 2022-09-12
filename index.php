@@ -1,7 +1,33 @@
 <?php 
 
+class User {
+    public $first_name;
+    public $last_name;
+    public $mail;
+    public $password;
 
- class Product {
+    public function __construct($first_name, $last_name, $mail, $password){          
+        $this->getUserFirstName($first_name);
+        $this->getUserLastName($last_name);
+        $this->getUserMail($mail);
+    }
+
+    public function getUserFirstName($first_name){
+        return $this->$first_name;
+    }
+    public function getUserLastName($last_name){
+        return $this->$last_name;
+    }
+    public function getUserMail($mail){
+        return $this->$mail;
+    }
+    public function getUserFirstName($password){
+        return $this->$password;
+    }
+}
+
+
+class Product {
     
     public $name;
     public $price;
@@ -92,24 +118,5 @@ $accessori = [$ciotola_cane, $collare_cane, $tiragraffi];
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<h1>Ciaone</h1>
 
-        <?php foreach($cibi as $cibo) { ?>
-
-            <?php echo $cibo->getProductName($name); ?>
-        
-        
-        <?php }?>
-</body>
-</html>
 
