@@ -1,5 +1,7 @@
 <?php 
 
+$carrello = []
+
 class User {
     protected $first_name;
     protected $last_name;
@@ -40,6 +42,16 @@ class CreditCard extends User {
     public function getAmount($amount){
         return $this->$amount;
     }
+
+    public function getCarrelloTotal(){
+        return array_sum(array $carrello): float;
+    }
+
+    public function payTotal(){
+        if ($this->getCarrelloTotal() < getAmount($amount)) {
+            echo "pagamento autorizzato"
+        } else echo "pagamento non autorizzato"
+    }
 }
 
 
@@ -61,6 +73,10 @@ class Product {
 
     public function getProductPrice($price){
         return $this->$price;
+    }
+
+    public function mettiNelCarrello(){
+        getProductPrice($price) = $carrello[]
     }
 
     public function getProductBrand($brand){
@@ -129,23 +145,5 @@ $accessori = [$ciotola_cane, $collare_cane, $tiragraffi];
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-<Main>
-    <div> 
-        <h1>Ciaone</h1>
-    </div>
-</Main>
-    
-</body>
-</html>
 
 
