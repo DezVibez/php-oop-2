@@ -9,11 +9,10 @@
     public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
     public $quantità;
 
-    public function __construct($name, $price, $brand, $type){          
+    public function __construct($name, $price, $brand){          
         $this->getProductName($name);
         $this->getProductPrice($price);
         $this->getProductBrand($brand);
-        $this->getProductQuantità($quantità);
     }
 
     public function getProductName($name){
@@ -28,7 +27,43 @@
         return $this->$brand;
     }
 
-    public function getProductPrice($type){
+    public function getProductType($type){
+        return $this->$type;
+    }
+
+    public function getProductQuantità($quantità){
+        return $this->$quantità;
+    }
+}
+
+class Cibo extends Product
+{
+    public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
+    public $quantità;
+
+    public function __construct($name, $price, $brand, $type, $quantità){          
+        parent::__construct($name, $price, $brand, $type, $quantità);
+    }
+
+    public function getProductType($type){
+        return $this->$type;
+    }
+
+    public function getProductQuantità($quantità){
+        return $this->$quantità;
+    }
+}
+
+class Accessorio extends Product
+{
+    public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
+    public $quantità;
+
+    public function __construct($name, $price, $brand, $type, $quantità){          
+        parent::__construct($name, $price, $brand, $type, $quantità);
+    }
+
+    public function getProductType($type){
         return $this->$type;
     }
 
@@ -38,10 +73,21 @@
 }
     
 
-$cibo_gatto = new Product("Crocchette Salmone", 21.75 , "Advance", "alimentazione");
-$cibo_cane = new Product("Riso Cane Adulto","Chris Buck & Jennifer Lee", "alimentazione");
-$cibo_criceto = new Product("Mangime Conigli ","Chris Buck & Kevin Lima", "alimentazione");
+//CIBI
 
+$cibo_gatto = new Cibo("Crocchette Salmone", 21.75 , "Advance", "alimentazione", "9kg" );
+$cibo_cane = new Cibo("Riso Cane Adulto", 17.99 ,"Taste of Wild","alimentazione", "2kg");
+$cibo_criceto = new Cibo("Mangime Conigli", 29.69 , "Versele" ,"alimentazione", "9kg");
+
+$cibi = [$cibo_gatto, $cibo_cane, $cibo_criceto];
+
+//ACCESSORI
+
+$ciotola_cane = new Accessorio("Ciotola Acciaio", 5.00 , "Advance", "accessorio" );
+$collare_cane = new Accessorio("Collare per Cani", 17.99 , "Taste of Wild", "accessorio");
+$tiragraffi = new Accessorio("Tiragraffi", 8.39 , "North Pole" , "accessorio");
+
+$accessori = [$ciotola_cane, $collare_cane, $tiragraffi];
 
 
 ?>
@@ -58,7 +104,12 @@ $cibo_criceto = new Product("Mangime Conigli ","Chris Buck & Kevin Lima", "alime
     
 <h1>Ciaone</h1>
 
+        <?php foreach($cibi as $cibo) { ?>
 
+            <?php echo $cibo->getProductName($name); ?>
+        
+        
+        <?php }?>
 </body>
 </html>
 
