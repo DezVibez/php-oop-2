@@ -3,13 +3,51 @@
 
  
 
-class Movie {
+class Product {
     
     public $name;
     public $director;
     public $year;
 
-    function __construct($name, $director, $year) {
+    public function __construct($name, $director, $year) {
+        $this->getProductName();
+        $this->director = $director;
+        $this->year = $year;
+    }
+
+
+    
+    public function getProductName(){
+        return $this->$name;
+    }
+}
+
+class Animal {
+    
+    public $name;
+    public $director;
+    public $year;
+
+    public function __construct($name, $director, $year) {
+        $this->getName();
+        $this->director = $director;
+        $this->year = $year;
+    }
+
+
+    
+    public function getName(){
+        return $this->$name;
+    }
+}
+
+class User {
+    
+    public $name;
+    public $director;
+    public $year;
+
+    public function __construct($name, $director, $year) {
         $this->name = $name;
         $this->director = $director;
         $this->year = $year;
@@ -19,7 +57,7 @@ class Movie {
     
     public function printElements(){
         $quantità = rand(0, 200);
-        return "Il film ". $this->name. " è disponibile in {$quantità} unità";
+        return ;
     }
 }
     
