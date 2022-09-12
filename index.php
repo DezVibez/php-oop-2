@@ -10,6 +10,7 @@ class User {
         $this->getUserFirstName($first_name);
         $this->getUserLastName($last_name);
         $this->getUserMail($mail);
+        $this->getUserPassword($password);
     }
 
     protected function getUserFirstName($first_name){
@@ -21,10 +22,10 @@ class User {
     protected function getUserMail($mail){
         return $this->$mail;
     }
-    protected function getUserFirstName($password){
+    protected function getUserPassword($password){
         return $this->$password;
     }
-}
+};
 
 
 class Product {
@@ -32,8 +33,6 @@ class Product {
     public $name;
     public $price;
     public $brand;
-    public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
-    public $quantità;
 
     public function __construct($name, $price, $brand){          
         $this->getProductName($name);
@@ -53,17 +52,10 @@ class Product {
         return $this->$brand;
     }
 
-    public function getProductType($type){
-        return $this->$type;
-    }
+};
 
-    public function getProductQuantità($quantità){
-        return $this->$quantità;
-    }
-}
+class Cibo extends Product {
 
-class Cibo extends Product
-{
     public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
     public $quantità;
 
@@ -78,10 +70,10 @@ class Cibo extends Product
     public function getProductQuantità($quantità){
         return $this->$quantità;
     }
-}
+};
 
-class Accessorio extends Product
-{
+class Accessorio extends Product {
+
     public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
     public $quantità;
 
@@ -96,7 +88,7 @@ class Accessorio extends Product
     public function getProductQuantità($quantità){
         return $this->$quantità;
     }
-}
+};
     
 
 //CIBI
@@ -118,5 +110,23 @@ $accessori = [$ciotola_cane, $collare_cane, $tiragraffi];
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<Main>
+    <div> 
+        <h1>Ciaone</h1>
+    </div>
+</Main>
+    
+</body>
+</html>
 
 
