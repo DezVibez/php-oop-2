@@ -7,11 +7,13 @@
     public $price;
     public $brand;
     public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
+    public $quantità;
 
-    public function __construct($name, $price, $brand){          
+    public function __construct($name, $price, $brand, $type){          
         $this->getProductName($name);
         $this->getProductPrice($price);
         $this->getProductBrand($brand);
+        $this->getProductQuantità($quantità);
     }
 
     public function getProductName($name){
@@ -29,16 +31,18 @@
     public function getProductPrice($type){
         return $this->$type;
     }
+
+    public function getProductQuantità($quantità){
+        return $this->$quantità;
+    }
 }
     
 
+$cibo_gatto = new Product("Crocchette Salmone", 21.75 , "Advance", "alimentazione");
+$cibo_cane = new Product("Riso Cane Adulto","Chris Buck & Jennifer Lee", "alimentazione");
+$cibo_criceto = new Product("Mangime Conigli ","Chris Buck & Kevin Lima", "alimentazione");
 
 
-$cibo_gatto = new Product("croccantini","John Lasseter", 2006);
-$cibo_cane = new Product("Frozen","Chris Buck & Jennifer Lee", 2013);
-$cibo_criceto = new Product("Tarzan","Chris Buck & Kevin Lima", 1999);
-
-$movies = [$cars,$frozen,$tarzan];
 
 ?>
 
