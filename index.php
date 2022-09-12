@@ -1,72 +1,42 @@
 <?php 
 
 
- 
-
-class Product {
+ class Product {
     
     public $name;
-    public $director;
-    public $year;
+    public $price;
+    public $brand;
+    public $type; //per tipo intendiamo la tipologia: cibo, accessori, ecc.
 
-    public function __construct($name, $director, $year) {
-        $this->getProductName();
-        $this->director = $director;
-        $this->year = $year;
+    public function __construct($name, $price, $brand){          
+        $this->getProductName($name);
+        $this->getProductPrice($price);
+        $this->getProductBrand($brand);
     }
 
-
-    
-    public function getProductName(){
+    public function getProductName($name){
         return $this->$name;
     }
-}
 
-class Animal {
-    
-    public $name;
-    public $director;
-    public $year;
-
-    public function __construct($name, $director, $year) {
-        $this->getName();
-        $this->director = $director;
-        $this->year = $year;
+    public function getProductPrice($price){
+        return $this->$price;
     }
 
-
-    
-    public function getName(){
-        return $this->$name;
-    }
-}
-
-class User {
-    
-    public $name;
-    public $director;
-    public $year;
-
-    public function __construct($name, $director, $year) {
-        $this->name = $name;
-        $this->director = $director;
-        $this->year = $year;
+    public function getProductBrand($brand){
+        return $this->$brand;
     }
 
-
-    
-    public function printElements(){
-        $quantità = rand(0, 200);
-        return ;
+    public function getProductPrice($type){
+        return $this->$type;
     }
 }
     
 
 
 
-$cars = new Movie("Cars","John Lasseter", 2006);
-$frozen = new Movie("Frozen","Chris Buck & Jennifer Lee", 2013);
-$tarzan = new Movie("Tarzan","Chris Buck & Kevin Lima", 1999);
+$cibo_gatto = new Product("croccantini","John Lasseter", 2006);
+$cibo_cane = new Product("Frozen","Chris Buck & Jennifer Lee", 2013);
+$cibo_criceto = new Product("Tarzan","Chris Buck & Kevin Lima", 1999);
 
 $movies = [$cars,$frozen,$tarzan];
 
