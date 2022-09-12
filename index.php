@@ -1,10 +1,10 @@
 <?php 
 
 class User {
-    public $first_name;
-    public $last_name;
-    public $mail;
-    public $password;
+    protected $first_name;
+    protected $last_name;
+    protected $mail;
+    protected $password;
 
     public function __construct($first_name, $last_name, $mail, $password){          
         $this->getUserFirstName($first_name);
@@ -12,16 +12,16 @@ class User {
         $this->getUserMail($mail);
     }
 
-    public function getUserFirstName($first_name){
+    protected function getUserFirstName($first_name){
         return $this->$first_name;
     }
-    public function getUserLastName($last_name){
+    protected function getUserLastName($last_name){
         return $this->$last_name;
     }
-    public function getUserMail($mail){
+    protected function getUserMail($mail){
         return $this->$mail;
     }
-    public function getUserFirstName($password){
+    protected function getUserFirstName($password){
         return $this->$password;
     }
 }
