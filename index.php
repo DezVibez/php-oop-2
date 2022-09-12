@@ -1,7 +1,5 @@
 <?php 
 
-$carrello = []
-
 class User {
     protected $first_name;
     protected $last_name;
@@ -32,18 +30,20 @@ class User {
 class CreditCard extends User {
 
     protected $amount;
+    protected $carrello = [];
 
 
-    public function __construct($first_name, $last_name, $mail, $password, $amount){          
+    public function __construct($first_name, $last_name, $mail, $password, $amount, $carrello = [];){          
         parent::__construct($first_name, $last_name, $mail, $password)
         $this->getAmount($amount);
+        $this->getCarrelloTotal($carrello)
     }
 
     public function getAmount($amount){
         return $this->$amount;
     }
 
-    public function getCarrelloTotal(){
+    public function getCarrelloTotal($carrello){
         return array_sum(array $carrello): float;
     }
 
