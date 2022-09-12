@@ -30,13 +30,13 @@ class User {
 class CreditCard extends User {
 
     protected $amount;
-    protected $carrello = [];
+    protected $carrello = []; //effettivamente $carrello non mi sembra una proprietà della classe CreditCard, penso sarebbe più corretto dichiararla fuori.
 
 
     public function __construct($first_name, $last_name, $mail, $password, $amount, $carrello = [];){          
         parent::__construct($first_name, $last_name, $mail, $password)
         $this->getAmount($amount);
-        $this->getCarrelloTotal($carrello)
+        $this->getCarrelloTotal($carrello);
     }
 
     public function getAmount($amount){
@@ -48,9 +48,9 @@ class CreditCard extends User {
     }
 
     public function payTotal(){
-        if ($this->getCarrelloTotal() < getAmount($amount)) {
-            echo "pagamento autorizzato"
-        } else echo "pagamento non autorizzato"
+        if ($this->getCarrelloTotal() < getAmount($amount)) { //indicativamente l'ho pensata così. Ovviamente serve qualcosa per pushare il prezzo del prodotto nell'Array.
+            echo "pagamento autorizzato";
+        } else echo "pagamento non autorizzato";
     }
 }
 
