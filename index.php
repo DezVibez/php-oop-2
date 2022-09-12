@@ -75,7 +75,9 @@ class Cibo extends Product {
     public $quantità;
 
     public function __construct($name, $price, $brand, $type, $quantità){          
-        parent::__construct($name, $price, $brand, $type, $quantità);
+        parent::__construct($name, $price, $brand);
+        $this->getProductType($type);
+        $this->getProductQuantità($quantità);
     }
 
     public function getProductType($type){
@@ -93,7 +95,9 @@ class Accessorio extends Product {
     public $quantità;
 
     public function __construct($name, $price, $brand, $type, $quantità){          
-        parent::__construct($name, $price, $brand, $type, $quantità);
+        parent::__construct($name, $price, $brand);
+        $this->getProductType($type);
+        $this->getProductQuantità($quantità);
     }
 
     public function getProductType($type){
