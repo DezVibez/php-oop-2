@@ -27,6 +27,21 @@ class User {
     }
 };
 
+class CreditCard extends User {
+
+    protected $amount;
+
+
+    public function __construct($first_name, $last_name, $mail, $password, $amount){          
+        parent::__construct($first_name, $last_name, $mail, $password)
+        $this->getAmount($amount);
+    }
+
+    public function getAmount($amount){
+        return $this->$amount;
+    }
+}
+
 
 class Product {
     
