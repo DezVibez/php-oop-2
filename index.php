@@ -3,12 +3,13 @@
 include __DIR__. '/models/credit-card/fra.php';
 include __DIR__. '/models/customer/';
 include __DIR__. '/models/product/product.php';
+include __DIR__. '/models/product/food.php';
 
 
 
-$prodotto = new Product();
+$prodotto = new Food("cibo per cani","viskies",5.00,"cane", "3kg","manzo");
 
-var_dump($Prodotto);
+var_dump($prodotto);
 
 ?>
 
