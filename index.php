@@ -7,7 +7,7 @@ include __DIR__. '/models/product/food.php';
 
 
 
-$prodotto = new Food("cibo per cani","viskies",5.00,"cane", "3kg","manzo");
+$prodotto = new Food("cibo per cani","viskies", 5.00, "cane", "3kg","manzo");
 
 var_dump($prodotto);
 
@@ -24,7 +24,7 @@ var_dump($prodotto);
 <body>
 
 <h1>
-    ciaone
+    <?php echo $prodotto->getBrand(); ?>
 </h1>
     
 </body>
